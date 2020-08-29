@@ -17,7 +17,7 @@ class dummy_urlopen(object):
 		self.url = url
 	def read(self):
 		if "https://translate.yandex.ru/" in self.url:
-			with open(os.path.join(os.path.dirname(__file__), "page.html"), "rb", encoding="UTF8") as f:
+			with open(os.path.join(os.path.dirname(__file__), "page.html"), "rb") as f:
 				body = f.read()
 				return body
 		if "https://translate.yandex.net/api/v1/tr.json/translate?" in self.url+"?":
