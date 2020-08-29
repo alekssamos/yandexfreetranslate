@@ -1,0 +1,10 @@
+tests/*.html
+__pycache__
+yandexfreetranslate/__pycache__
+dist
+build
+*.egg-info
+.tox
+
+yandexfreetranslate/*.pyc
+tests/*.pyc
