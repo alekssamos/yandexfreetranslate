@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+<html lang="ru" class="application state-empty state-unresolved state-db_inactive">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="google" content="notranslate">
+        <meta name="keywords" content="перевод, переводчик, перевод онлайн, переводчик онлайн, translate, англо-русский, машинный перевод">
+        <meta name="viewport" content="width=1024">
+        <meta name="description" content="Перевод с английского, немецкого, французского, испанского, польского, турецкого и других языков на русский и обратно. Возможность переводить отдельные слова и фразы, а также целые тексты и веб-страницы.">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://mc.yandex.ru https://twitter.github.io https://avatars-fast.yandex.net https://favicon.yandex.net https://avatars.mds.yandex.net https://yastatic.net https://mc.admetrica.ru blob: data: https://*.yandex.net:* https://yandex.ru https://yandex.ru https://*.yandex.ru; font-src https://*.yandex.net:* https://yastatic.net; child-src blob:; worker-src 'self' blob:; frame-src https://awaps.yandex.ru https://awaps.yandex.net https://yandexadexchange.net https://*.yandexadexchange.net https://*.yandex.ru https://yastatic.net https://z5h64q92x9.net https://*.z5h64q92x9.net:*; media-src data: https://yandex.st https://yastatic.net https://*.yandex.net; style-src 'unsafe-inline' 'unsafe-eval' 'nonce-FNYlRl9agT' https://yandex.st https://*.yandex.net:* https://yastatic.net; script-src 'self' 'unsafe-eval' 'unsafe-inline' 'nonce-FNYlRl9agT' https://an.yandex.ru https://yandex.st https://*.yandex.net:* https://mc.yandex.ru https://yastatic.net; connect-src 'self' wss://*.yandex.net https://mc.yandex.ru https://yandex.st https://yastatic.net https://*.yandex.by https://*.yandex.com https://*.yandex.com.tr https://*.yandex.ru https://*.yandex.kz https://*.yandex.ua https://*.yandex.net https://*.yandex.net:* https://yandex.ru https://yandex.ru https://mc.admetrica.ru;">
+
+        
+<script src="https://yastatic.net/s3/translate/v20.8.4/js/libs/rum/rum.min.js" crossorigin="anonymous"></script>
+<script nonce="FNYlRl9agT">
+  Ya.Rum.init({
+    beacon: true,
+    clck: 'https://yandex.ru/clck/click',
+    slots: ['263031,0,53'],
+    reqid: Date.now() + ':' + Math.random(),
+    crossOrigin: ''
+  }, {
+    '287': '213',
+    '143': '28.575.2048'
+  });
+
+  Ya.Rum.initErrors({
+    project: 'translate',
+    page: 'desktop_new',
+    env: 'production',
+    platform: 'desktop',
+    version: 'v20.8.4',
+    limits: {
+      client: 10,
+      uncaught: 100,
+      script: 0,
+      external: 10
+    },
+    filters: {
+      message: {
+        '0': /document\.querySelectorAll\(\.\.\.\)\[Symbol\.iterator\] is not a function/,
+        '1': /document\.getElementsByClassName\("translation"\)\[0\]\.innerText/,
+      },
+      stack: {
+        '0': /^$/,
+      }
+    },
+    throttleSend: 0,
+    transform: function (error) {
+      if (window._rumLatestTapEvent) {
+        var latestTap = window._rumLatestTapEvent;
+        if (latestTap.ts) {
+          latestTap.delay = Date.now() - latestTap.ts;
+          delete latestTap.ts;
+        }
+        error.additional = latestTap;
+      }
+      return error;
+    }
+  });
+</script>
+<script src="https://yastatic.net/s3/translate/v20.8.4/js/libs/rum/bundle/implementation.min.js" crossorigin="anonymous"></script>
+
+
+        <link href="/opensearch.xml" rel="search" type="application/opensearchdescription+xml" title="Яндекс.Переводчик">
+        <link href="/icons/favicon.ico" rel="icon" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+        <link href="/icons/favicon.png" rel="apple-touch-icon" sizes="192x192">
+        
+        <link rel="canonical" href="https://translate.yandex.ru"/>
+        <link rel="alternate" hreflang="ru" href="https://translate.yandex.ru"/>
+        <link rel="alternate" hreflang="ru-UA" href="https://translate.yandex.ua/?ui=ru"/>
+        <link rel="alternate" hreflang="be" href="https://translate.yandex.by"/>
+        <link rel="alternate" hreflang="ru-BY" href="https://translate.yandex.by/?ui=ru"/>
+        <link rel="alternate" hreflang="kk" href="https://translate.yandex.kz"/>
+        <link rel="alternate" hreflang="ru-KZ" href="https://translate.yandex.kz/?ui=ru"/>
+        <link rel="alternate" hreflang="uk" href="https://translate.yandex.ua"/>
+        <link rel="alternate" hreflang="en" href="https://translate.yandex.com"/>
+        <link rel="alternate" hreflang="tr" href="https://ceviri.yandex.com.tr"/>
+        
+        <title>Яндекс.Переводчик – словарь и онлайн перевод на английский, русский, немецкий, французский, украинский и другие языки.</title>
+        <style nonce="FNYlRl9agT">
+            .spinner,
+            .message_yellow,
+            .external-panel_right,
+            .application.state-unresolved {
+                visibility: hidden;
+            }
+            .state-hidden {
+                display: none;
+            }
+        </style>
+        <style nonce="FNYlRl9agT">
+            .service-description {
+                color: #4c4c4c;
+                bottom: 0;
+                padding: 11px;
+                overflow: hidden;
+                position: absolute;
+                max-height: 100%;
+                border-top: 24px solid #fff;
+                background: #f6f8f9;
+                line-height: 22px;
+                -webkit-box-sizing: border-box;
+                   -moz-box-sizing: border-box;
+                        box-sizing: border-box;
+            }
+            .service-description a {
+                color: #669;
+            }
+        </style>
+        
+        <link rel="stylesheet" href="https://yastatic.net/s3/translate/v20.8.4/styles/bundles/main.css" type="text/css">
+        <link rel="stylesheet" href="https://yastatic.net/s3/translate/v20.8.4/styles/bundles/text.css" type="text/css">
+        
+        <style id="collectionColors" nonce="FNYlRl9agT"></style>
+        <!--
+            Twemoji images are used to display emoji.
+            https://github.com/twitter/twemoji
+        -->
+    </head>
+    <body data-text="" data-lang="">
+        <div id="header" class="header"><div class="service"><a id="logo" href="https://yandex.ru" class="logo" target="_top" data-tracking-data='{"id": "yandex"}'><span class="logo-text">Яндекс</span></a><a href="/" class="name" target="_top" data-tracking-data='{"id": "yandexTranslate"}'><span class="logo-text">Переводчик</span></a><div class="tabs" data-tracking-data='{"id": "tabs"}'><span class="button button_tab state-selected">Текст</span><a href="/translate" class="button button_tab" data-tracker-goal="TAB_NAVIGATE_URL" data-tracking-data='{"id": "tabs/url"}'>Сайт</a><a href="/doc" class="button button_tab" data-tracker-goal="TAB_NAVIGATE_DOC" data-tracking-data='{"id": "tabs/doc"}'>Документ</a><a href="/ocr" class="button button_tab" data-tracker-goal="TAB_NAVIGATE_IMAGE" data-tracking-data='{"id": "tabs/image"}'>Картинка</a><div id="tabsToggle" class="header-toggler" tabindex="1"></div></div><div id="tabsMenu" role="listbox" class="listbox listbox_tabs_menu state-unselectable state-fadeaway state-hidden"><a href="/translate" class="button button_tab" data-tracker-goal="TAB_NAVIGATE_URL" data-tracking-data='{"id": "tabs/url"}'>Сайт</a><a href="/doc" class="button button_tab" data-tracker-goal="TAB_NAVIGATE_DOC" data-tracking-data='{"id": "tabs/doc"}'>Документ</a><a href="/ocr" class="button button_tab" data-tracker-goal="TAB_NAVIGATE_IMAGE" data-tracking-data='{"id": "tabs/image"}'>Картинка</a></div></div><div class="menu"><div class="inline-block" data-tracking-data='{"id": "collectionsButton"}'><span role="button" class="button button_icon button_icon_collections" aria-label="Подборки"
+                          data-action="toggleFav" data-tooltip="Подборки"></span></div><div class="inline-block" data-tracking-data='{"id": "options"}'><span id="optionsButton" role="button" class="button button_icon button_icon_settings" tabindex="-1" aria-label="Настройки" data-tooltip="Настройки" data-tracking-data='{"id": "options/button"}'></span><div id="optionsListbox" class="listbox options state-hidden state-fadeaway state-unselectable" data-tracking-data='{"id": "options/listbox"}'></div></div><a href="https://passport.yandex.ru/auth?origin=translate&amp;retpath=https%3A%2F%2Ftranslate.yandex.ru%2F" class="button button_enter button_normal">Войти</a></div><div id="tableau" class="tableau state-hidden state-unselectable"><iframe id="tableauFrame" class="tableau-frame" frameborder="0" allowtransparency="true"></iframe></div></div><div id="mainContainer" class="main"><div class="spacer" data-resizer-spacer="true"></div><div class="container container_main" data-resizer-target="true"><div class="container-item container-item_left"><div class="panel"><span id="clearButton" role="button" class="button button_icon button_icon_clear state-disabled" aria-label="Очистить" data-tooltip="Очистить" data-tooltip-position="top" data-tracking-data='{}'></span><div class="inline-block" data-tracking-data='{"id": "textSpeaker"}'><span id="textNativeSpeaker" role="button" class="button button_icon button_icon_speaker state-disabled" aria-label="Озвучить" data-tooltip="Озвучить" data-tooltip-position="top"></span><span id="textSpeaker" role="button" class="button button_icon button_icon_speaker state-disabled" aria-label="Озвучить" data-tooltip="Озвучить" data-tooltip-position="top"></span></div><span id="microphone" role="button" class="button button_icon button_icon_microphone state-invalid" aria-label="Голосовой ввод" data-tooltip="Голосовой ввод" data-tooltip-position="top" data-tracking-data='{}'></span><span id="keyboardButton" role="button" class="button button_icon button_icon_keyboard state-disabled" aria-label="Экранная клавиатура" data-tooltip="Экранная клавиатура" data-tooltip-position="top" data-tracking-data='{}'></span><span id="spellerButton" role="button" class="button button_icon button_icon_speller state-disabled" aria-label="Автоисправление опечаток" data-tooltip="Автоисправление опечаток" data-tooltip-position="top" data-tracking-data='{}'></span><span id="srcLangButton" class="button button_select button_select_source" tabindex="-1" data-tooltip="Язык исходного текста" data-tooltip-position="top" data-tracking-data='{}'>&mdash;</span></div><div id="textbox" class="textwrapper state-empty"><canvas id="volume" class="volume state-hidden state-fadeaway" width="120" height="120"></canvas><div class="textbox" data-tracking-data='{"id": "srcTextbox"}'><span class="placeholder">Введите текст, адрес сайта или перетащите сюда документ или картинку</span><div id="alignment" class="textinput textlayer textlayer_measurer textlayer_measurer_alignment"></div><div id="speller" class="textinput textlayer textlayer_measurer textlayer_measurer_speller state-unselectable"></div><div id="interim" class="textinput textlayer textlayer_measurer textlayer_measurer_interim state-unselectable"></div><div id="measurer" class="textinput textlayer textlayer_measurer"></div><div id="textLayer" class="textinput textlayer textlayer_measurer textlayer_measurer_layer textlayer_measurer_textarea"></div><div id="fakeArea" class="fakearea textinput textlayer" tabindex="0" autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false"></div><textarea id="textarea" class="textarea textinput textlayer" tabindex="0" autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false" disabled="true"></textarea><div id="predictor" class="predictor state-hidden state-unselectable" tabindex="-1" unselectable="on"></div><div id="suggestions" class="suggestions state-hidden state-unselectable" tabindex="-1" unselectable="on"></div><div id="spellerListbox" class="listbox listbox_fixed state-hidden state-fadeaway state-unselectable"></div><div id="textCounter" class="message message_external message_textlimit state-unselectable"><div id="sourceTranslitButton" class="button state-hidden" data-text-show="Показать транслитерацию" data-text-hide="Скрыть транслитерацию"></div><div class="message-text"><span id="textCounterContent">0</span> / 10000</div></div></div></div></div><div class="container-item container-item_right"><div class="panel"><span id="dstLangButton" class="button button_select button_select_target" tabindex="-1" data-tooltip="Язык перевода" data-tooltip-position="top" data-tracking-data='{}'>&mdash;</span><span id="favButton" role="button" class="button button_icon button_icon_favourites state-disabled"
+                              aria-label="Добавить в подборку"
+                              data-tooltip="Добавить в подборку"
+                              data-tooltip-position="top"
+                              data-tracking-data='{}'></span><div class="inline-block" data-tracking-data='{"id": "translatorSpeaker"}'><span id="translatorNativeSpeaker" role="button" class="button button_icon button_icon_speaker state-disabled" aria-label="Озвучить" data-tooltip="Озвучить" data-tooltip-position="top"></span><span id="translatorSpeaker" role="button" class="button button_icon button_icon_speaker state-disabled" aria-label="Озвучить" data-tooltip="Озвучить" data-tooltip-position="top"></span></div><span id="copyButton" role="button" class="button button_icon button_icon_copy state-disabled" aria-label="Выделить все" data-tooltip="Выделить все" data-tooltip-position="top" data-tracking-data='{}'></span><span id="shareButton" role="button" class="button button_icon button_icon_share state-disabled" tabindex="-1" aria-label="Поделиться" data-tooltip="Поделиться" data-tooltip-position="top" data-tracking-data='{}'></span><span id="goodVoteButton" role="button" class="button button_icon button_icon_thumbsup state-disabled" aria-label="Хороший перевод" data-tooltip="Хороший перевод" data-tooltip-position="top" data-tracking-data='{}'></span><span id="badVoteButton" role="button" class="button button_icon button_icon_thumbsdown state-disabled" aria-label="Плохой перевод" data-tooltip="Плохой перевод" data-tooltip-position="top" data-tracking-data='{}'></span></div><div id="textbox2" class="textwrapper state-hidden"><div class="textbox" data-tracking-data='{"id": "dstTextbox"}'><div id="external" class="message message_external state-hidden state-fadeaway state-unselectable"><div id="targetTranslitButton" class="button state-hidden" data-text-show="Показать транслитерацию" data-text-hide="Скрыть транслитерацию" data-tracking-data='{}'></div><div class="message-text" data-tracking-data='{"id": "externalTranslate"}'>Перевести в<span id="externalContent"></span></div></div><div class="message message_yellow message_vote_good"><div class="message-text message-content message-content_extra" data-inner-text="Спасибо!"></div></div><div class="message message_yellow message_vote_bad"><div class="message-content message-content_main"><span class="message-text" data-inner-text="Спасибо!"></span><span class="button button_active" data-action="openEditing" data-inner-text="Предложить свой вариант"></span><span class="button" data-action="refuseEditing" data-inner-text="Закрыть"></span></div></div><div class="message message_yellow message_warning"><span class="message-text" data-inner-text="Перевод выполнить не удалось"></span><span class="button button_active" data-action="retry" data-inner-text="Повторить попытку"></span></div><div class="message message_yellow message_alternative_error"><span class="message-text" data-inner-text="Перевод выполнить не удалось"></span></div><div class="message message_yellow message_url"><span class="button button_active" data-action="translatePage" data-inner-text="Перевести сайт"></span></div><div class="message message_yellow message_complain"><span class="button button_active" data-action="sendSuggestion" data-inner-text="Отправить"></span></span><span class="button" data-action="cancelTranslationSuggestion" data-inner-text="Отменить"></div><div id="measurerDst" class="textinput textlayer textlayer_measurer"></div><div id="translationLayer" class="textinput textlayer textlayer_measurer textlayer_measurer_layer textlayer_measurer_translation"></div><pre id="translation" class="textinput textlayer translation state-fadeaway" tabindex="1"></pre><textarea id="textarea2" class="editor textinput textlayer state-empty" tabindex="-1" autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false"></textarea><div id="predictorDst" class="predictor state-hidden state-unselectable" tabindex="-1" unselectable="on"></div><div class="spinner overlay overlay_white state-fadeaway"><span class="button button_icon button_icon_spinner"></span></div><div id="alternativesListbox" class="listbox listbox_alternatives listbox_fixed state-hidden state-fadeaway state-unselectable"></div><div id="alternativesTooltip" class="predictor alternatives_tooltip state-hidden state-unselectable" tabindex="-1" unselectable="on" data-align="predictorRight"></div><form id="urlForm" class="url-form textinput textlayer state-hidden state-fadeaway" method="post" action="/translate"></form></div></div><div id="selectTooltip" class="tooltip select-tooltip state-unselectable" data-position="top" data-align="center">Выделите текст, чтобы посмотреть примеры</div></div><div role="button" class="button button_icon button_icon_swap" data-tooltip="Переключить направление" data-tooltip-position="top" data-action="swapDirection" data-tracking-data='{"id": "swapLang"}'></div><div id="resizer" class="button button_icon button_icon_resizer"></div></div><div class="container container_rubber"><div class="container_rubber_body"><div id="historyRecent" class="history_records"></div><div id="serviceDescription" class="service-description"><strong>Яндекс.Переводчик</strong>&nbsp;— синхронный перевод для 99 языков, подсказки при наборе, словарь с транскрипцией, произношением и примерами употребления слов, а также многое другое.
+                        Самые популярные направления перевода:&nbsp;<a href="/translator/English-Russian">с английского&nbsp;на русский</a> и <a href="/translator/Russian-English">с русского&nbsp;на английский</a>, <a href="/translator/German-Russian">с немецкого&nbsp;на русский</a> и <a href="/translator/Russian-German">с русского&nbsp;на немецкий</a>, <a href="/translator/French-Russian">с французского&nbsp;на русский</a> и <a href="/translator/Russian-French">с русского&nbsp;на французский</a>, <a href="/translator/Chinese-Russian">с китайского&nbsp;на русский</a> и <a href="/translator/Russian-Chinese">с русского&nbsp;на китайский</a>, <a href="/translator/Spanish-Russian">с испанского&nbsp;на русский</a> и <a href="/translator/Russian-Spanish">с русского&nbsp;на испанский</a>, <a href="/translator/Ukrainian-Russian">с украинского&nbsp;на русский</a> и <a href="/translator/Russian-Ukrainian">с русского&nbsp;на украинский</a>, <a href="/translator/Turkish-Russian">с турецкого&nbsp;на русский</a> и <a href="/translator/Russian-Turkish">с русского&nbsp;на турецкий</a>, <a href="/translator/Italian-Russian">с итальянского&nbsp;на русский</a> и <a href="/translator/Russian-Italian">с русского&nbsp;на итальянский</a>, <a href="/translator/Tatar-Russian">с татарского&nbsp;на русский</a> и <a href="/translator/Russian-Tatar">с русского&nbsp;на татарский</a>, <a href="/translator/Kazakh-Russian">с казахского&nbsp;на русский</a> и <a href="/translator/Russian-Kazakh">с русского&nbsp;на казахский</a>, <a href="/translator/Udmurt-Russian">с удмуртского&nbsp;на русский</a> и <a href="/translator/Russian-Udmurt">с русского&nbsp;на удмуртский</a>.
+                    </div><div id="dictionaryHeader" class="dictionary-header state-hidden"><div class="dictionary-header_label">Результаты для:</div><div id="dictionaryHeaderButton" class="dictionary-header_button state-unselectable"></div></div><div id="dictionary" class="dictionary dictionary-block state-hidden state-fadeaway" data-tooltip-nohide="true"></div><div id="examples" class="examples dictionary-block state-hidden state-fadeaway" data-tooltip-nohide="true" data-tracking-data='{"id": "exmaples/root"}'><div class="segment-title">Примеры</div><div id="wordsExampleTab" class="word-examples dictionary-example_triggers state-unselectable state-chunked" data-tracking-data='{"id": "examples/tabs"}'></div><div id="examplesContent" class="dictionary-list"></div></div></div><div class="container_rubber_footer"><div class="footer"><div class="footer-line footer-line_bottom"><ul class="footer-links inline-block"><li><a href="https://www.yandex.ru/portal/set/my/?param=0&amp;block=44&amp;retpath=https%3A%2F%2Ftranslate.yandex.ru%2F&amp;sk=yb6f9992d779734192ea51d2651143405" class="footer-link" data-tracker-goal="FOOTER_LINK_NAVIGATE_MOBILE" data-tracking-data='{"id": "footer/mobile"}'>Мобильная версия</a></li><li><a href="/developers" class="footer-link" data-tracker-goal="FOOTER_LINK_NAVIGATE_DEV" data-tracking-data='{"id": "footer/dev"}'>Разработчикам</a></li><li><a href="//legal.yandex.ru/translate_termsofuse/" class="footer-link" data-tracker-goal="FOOTER_LINK_NAVIGATE_TERMS" data-tracking-data='{"id": "footer/legal"}'>Пользовательское соглашение</a></li><li><a href="//yandex.ru/support/translate/index.html" class="footer-link" data-tracker-goal="FOOTER_LINK_NAVIGATE_FEEDBACK" target="_blank" data-tracking-data='{"id": "footer/help"}'>Помощь</a></li><li><a href="/catalog" class="footer-link" data-tracker-goal="FOOTER_LINK_NAVIGATE_CATALOG" target="_blank" data-tracking-data='{"id": "footer/catalog"}'>Популярные переводы</a></li><li class="footer-links-item_usability"><a href="https://yandex.ru/jobs/usability" class="footer-link" target="_blank" data-tracker-goal="FOOTER_LINK_NAVIGATE_USABILITY" data-tracking-data='{"id": "footer/usability"}'>Участие в исследованиях</a></li><li class="footer-links-item_browser"><a class="footer-promo-browser" href="https://browser.yandex.ru/?from=link_translate_&amp;banerid=0488000000" target="_blank" data-tracker-goal="FOOTER_LINK_NAVIGATE_BROWSER">Переводите в Яндекс.Браузере</a></li></ul><span class="footer-copyright inline-block">&copy;&nbsp;2011&ndash;2020 &laquo;<a href="https://yandex.ru" class="footer-link" data-tracker-goal="FOOTER_LINK_NAVIGATE_YANDEX" data-tracking-data='{"id": "footer/yandex"}'>Яндекс</a>&raquo;</span></div></div></div></div><div id="popunder" class="dict-popup state-hidden" data-align="vertical"></div><div id="popunderTooltip" class="example_ref-text state-hidden state-fadeaway"></div><div id="keyboardContainer" class="keyboard-container state-hidden state-fadeaway state-unselectable"><div id="keyboard" class="keyboard"><div class="keyboard-row"><div role="button" class="keyboard-key" data-keycode="192"></div><div role="button" class="keyboard-key" data-keycode="49"></div><div role="button" class="keyboard-key" data-keycode="50"></div><div role="button" class="keyboard-key" data-keycode="51"></div><div role="button" class="keyboard-key" data-keycode="52"></div><div role="button" class="keyboard-key" data-keycode="53"></div><div role="button" class="keyboard-key" data-keycode="54"></div><div role="button" class="keyboard-key" data-keycode="55"></div><div role="button" class="keyboard-key" data-keycode="56"></div><div role="button" class="keyboard-key" data-keycode="57"></div><div role="button" class="keyboard-key" data-keycode="48"></div><div role="button" class="keyboard-key" data-keycode="189"></div><div role="button" class="keyboard-key" data-keycode="187"></div><div role="button" class="keyboard-key" data-keycode="8" data-specialkey="true"></div></div><div class="keyboard-row"><div role="button" class="keyboard-key" data-keycode="9" data-specialkey="true"></div><div role="button" class="keyboard-key" data-keycode="81"></div><div role="button" class="keyboard-key" data-keycode="87"></div><div role="button" class="keyboard-key" data-keycode="69"></div><div role="button" class="keyboard-key" data-keycode="82"></div><div role="button" class="keyboard-key" data-keycode="84"></div><div role="button" class="keyboard-key" data-keycode="89"></div><div role="button" class="keyboard-key" data-keycode="85"></div><div role="button" class="keyboard-key" data-keycode="73"></div><div role="button" class="keyboard-key" data-keycode="79"></div><div role="button" class="keyboard-key" data-keycode="80"></div><div role="button" class="keyboard-key" data-keycode="219"></div><div role="button" class="keyboard-key" data-keycode="221"></div><div role="button" class="keyboard-key" data-keycode="220"></div></div><div class="keyboard-row"><div role="button" class="keyboard-key" data-keycode="20" data-specialkey="true"></div><div role="button" class="keyboard-key" data-keycode="65"></div><div role="button" class="keyboard-key" data-keycode="83"></div><div role="button" class="keyboard-key" data-keycode="68"></div><div role="button" class="keyboard-key" data-keycode="70"></div><div role="button" class="keyboard-key" data-keycode="71"></div><div role="button" class="keyboard-key" data-keycode="72"></div><div role="button" class="keyboard-key" data-keycode="74"></div><div role="button" class="keyboard-key" data-keycode="75"></div><div role="button" class="keyboard-key" data-keycode="76"></div><div role="button" class="keyboard-key" data-keycode="186"></div><div role="button" class="keyboard-key" data-keycode="222"></div><div role="button" class="keyboard-key" data-keycode="13" data-specialkey="true"></div></div><div class="keyboard-row"><div role="button" class="keyboard-key" data-keycode="16" data-specialkey="true"></div><div role="button" class="keyboard-key" data-keycode="226"></div><div role="button" class="keyboard-key" data-keycode="90"></div><div role="button" class="keyboard-key" data-keycode="88"></div><div role="button" class="keyboard-key" data-keycode="67"></div><div role="button" class="keyboard-key" data-keycode="86"></div><div role="button" class="keyboard-key" data-keycode="66"></div><div role="button" class="keyboard-key" data-keycode="78"></div><div role="button" class="keyboard-key" data-keycode="77"></div><div role="button" class="keyboard-key" data-keycode="188"></div><div role="button" class="keyboard-key" data-keycode="190"></div><div role="button" class="keyboard-key" data-keycode="191"></div><div role="button" class="keyboard-key" data-keycode="16" data-specialkey="true"></div></div><div class="keyboard-row"><div role="button" class="keyboard-key" data-keycode="18" data-specialkey="true"></div><div id="keyboardLang" role="button" class="keyboard-key" data-keycode="32" data-specialkey="true"></div><div role="button" class="keyboard-key" data-keycode="18" data-specialkey="true"></div></div></div><div class="close" data-action="closeKeyboard"></div></div></div><div id="dropOverlay" class="overlay overlay_fixed drop-overlay state-hidden state-fadeaway state-unselectable"><div class="drop-border"><form id="dropContent" class="drop-content" method="post"><div class="drop-image"><div class="drop-icon drop-icon_back"></div><div class="drop-icon drop-icon_third"></div><div class="drop-icon drop-icon_second"></div><div class="drop-icon drop-icon_front"></div></div><div>Отпустите документ, чтобы перевести</div></form></div></div><div id="collectionsWrapper" class="overlay collections state-hidden state-hidden2 state-fadeaway state-unselectable" data-action="toggleFav"><div class="overlay-content" data-action="preventToggleFav"><div class="collections-content collections-content_list"><div id="collectionList" class="content-scrollable"><span id="addCollectionButton" class="button button_yellow" data-action="addCollection">Создать</span><div id="collectionListContent" class="collection-list-content"></div><div id="topList"></div></div></div><div class="collections-content collections-content_add"><div class="collection-page-header"><span class="button button_icon button_icon_back" data-action="collectionsReturn"></span><div class="collection-header">Новая подборка</div></div><div class="content-inner"><div id="collectionName" class="collection-name_input inline-block state-empty"><input id="collectionNameInput" class="textinput" maxlength="50" spellcheck="false" autocapitalize="on" autocorrect="off" autocomplete="off" placeholder="Название" type="text"><div class="tooltip state-unselectable" data-position="bottom"
+                                 data-text-alert="Подборка с таким именем уже существует"
+                                 data-text-limit="У вас максимальное количество подборок"></div></div><div class="tumbler-wrapper">
+                            Публичная подборка
+                            <span id="collectionTumbler" class="tumbler"></span></div><div id="createCollectionButton" class="button button_yellow state-inactive">Создать</div></div></div><div class="collections-content collections-content_records"><div id="collectionHeader" class="collection-page-header collection-color" data-collection-type="" data-color=""><div class="header-default"><div class="collection-header-top"><span class="button button_icon button_icon_back_white collection-return" data-action="collectionsReturn"></span><div class="collection-header_expanded"><div id="collectionHeaderName" class="collection-header_name"></div></div><div class="collection-icons"><span class="button button_icon button_icon_share_white collection-button" data-action="shareCollection"></span><div id="collectionSearch" class="collection_search inline-block collection-button state-empty"><span class="button button_icon button_icon_clear2_white" data-action="collapseSearch"></span><span class="button button_icon button_icon_search_white" data-action="expandSearch"></span><input id="collectionSearchInput" class="textinput" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off" placeholder="Найти в подборке" type="text"></div><span id="collectionMenuButton" class="button button_icon button_icon_menu_white collection-button" tabindex="-1"></span></div><span class="button button_icon button_icon_sync"></span></div><div class="collection-header-bottom" id="collectionHeaderContent"></div></div><div class="header-select"><span class="button button_icon button_icon_clear2_white" data-action="recordsReturn"></span><div class="header-edit"><span class="button button_yellow" data-action="moveRecords">Переместить</span><span class="button button_gray" data-action="deleteRecords">Удалить</span></div><div class="header-edit-sub"><span class="button button_yellow" data-action="copyRecords">Копировать</span></div><span id="selectAllButton" class="button button_gray" data-text-select="Выбрать всё" data-text-unselect="Снять выделение"></span></div></div><div class="subscription-broken"><div>Автор больше не обновляет эту подборку. Вы можете перенести её к себе и дополнять самостоятельно</div><div class="button button_yellow" data-action="saveCollection">Сделать своей подборкой</div><div class="button" data-action="deleteCollection" data-confirm="Вы уверены, что хотите отписаться от подборки?">Отписаться</div></div><div class="content-scrollable"><div id="recordsList" class="record-list state-selectable"><ul id="recordsListContent"></ul></div></div><a href="https://passport.yandex.ru/auth?origin=translate&amp;retpath=https%3A%2F%2Ftranslate.yandex.ru%2F" class="button button_yellow button_subscribe">Подписаться</a></div></div></div><div id="spellerPopup" class="listbox listbox_fixed listbox_speller state-hidden state-fadeaway state-unselectable"><div class="listbox-option">
+                Показан перевод для&nbsp;&laquo;<span id="spellerPopupContent" class="speller-value"></span>&raquo;
+            </div><div class="listbox-option" data-action="spellerReturn">Отменить исправление</div></div><div id="tooltip" class="tooltip state-hidden state-fadeaway state-unselectable" data-align="center"></div><div id="share" role="listbox" class="listbox listbox_share listbox_fixed state-hidden state-fadeaway state-unselectable" data-align="center"><div class="listbox-option listbox-option_fakeinput"><div id="shareInput" class="listbox-option_fakeinput-content state-selectable"></div><div id="shareCopyLink" class="button button_gray button_icon button_icon_copy" aria-label="Выделить ссылку" data-tooltip="Выделить ссылку" data-tooltip-position="top"></div></div><div class="listbox-column"><div id="shareContent"></div><div class="listbox-option" data-action="mailTo" unselectable="on"></div></div><span role="button" class="button button_gray button_search" data-action="openSearch" aria-label="Найти в Яндексе">Найти в Яндексе</span></div><div id="complaintPopup" class="listbox listbox_fixed listbox_complaint state-hidden state-fadeaway state-unselectable" data-complaint-type=""><i class="close" data-action="cancelComplaintMode"></i><div class="listbox-option listbox-option_label">Сообщить об ошибке</div><div class="complaint-container complaint-container_main"><div id="complaintPopupProposal" class="listbox-column listbox-column_proposal state-empty"><span class="placeholder state-ellipsis">Вариант перевода (по желанию)</span><textarea id="complaintPopupProposalInput" class="textinput textlayer" maxlength="1000" autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false"></textarea></div><div id="complaintPopupComment" class="listbox-column state-empty"><span class="placeholder state-ellipsis">Комментарий (по желанию)</span><textarea id="complaintPopupCommentInput" class="textinput textlayer" maxlength="200" autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false"></textarea></div><div class="listbox-option" data-action="sendComplaint">Сообщить</div></div><div class="complaint-container complaint-container_success"><div class="complaint-body"><div class="complaint-popup-text">
+                        Спасибо! Мы записали.
+                    </div></div></div><div class="complaint-container complaint-container_error"><div class="complaint-body"><div class="complaint-popup-title">Ошибка</div><div class="complaint-popup-text">
+                        Что-то пошло не так.
+                    </div></div><div class="listbox-option" data-action="retryComplaint">Повторить</div></div></div><div id="collectionsToast" class="collection-change-toast state-hidden"></div><div id="collectionNewAddPopup" class="new-collection-popup-overlay overlay overlay_fixed state-hidden" data-action="closeRecordMovePopup"><div class="record-move-popup listbox listbox_fixed" data-action="preventCloseRecordMovePopup"><div class="collection-popup-header">Переместить в подборку</div><span class="button header-button button_icon button_icon_clear2" data-action="closeRecordMovePopup"></span><ul id="collectionsPopupList" class="collections-popup-list"></ul></div></div><div id="collectionAddPopup" class="new-collection-popup-overlay overlay overlay_fixed state-hidden state-empty" data-action="closeAddPopup"><div class="collection-input-popup listbox listbox_fixed" data-action="preventCloseAddPopup"><div class="collection-popup-header">Создать подборку</div><span class="button header-button button_icon button_icon_clear2" data-action="closeAddPopup"></span><div class="collection-name_input inline-block"><input id="collectionNameInput2" class="textinput" maxlength="50" spellcheck="false" autocapitalize="on" autocorrect="off" autocomplete="off" placeholder="Название" type="text"><div class="tooltip state-unselectable" data-position="bottom"
+                         data-text-alert="Подборка с таким именем уже существует"
+                         data-text-limit="У вас максимальное количество подборок"></div></div><div class="button button_yellow" data-action="createCollectionAndAdd">Сохранить</div></div></div><div id="collectionsNameEditPopup" class="edit-collection-popup-overlay overlay overlay_fixed state-hidden state-fadeaway state-empty" data-action="closeCollectionPopup"><div class="collection-input-popup listbox listbox_fixed" data-action="preventCloseCollectionPopup"><div class="collection-popup-header">Переименовать подборку</div><span class="button header-button button_icon button_icon_clear2" data-action="closeCollectionPopup"></span><div class="collection-name_input inline-block"><input id="collectionNameInput3" class="textinput" maxlength="50" spellcheck="false" autocapitalize="on" autocorrect="off" autocomplete="off" placeholder="Название" type="text"><div class="tooltip state-unselectable" data-position="bottom"
+                         data-text-alert="Подборка с таким именем уже существует"></div></div><div class="button button_yellow" data-action="renameCollection">Сохранить</div></div></div><div id="collectionMenuListbox" class="collection-menu listbox state-hidden state-fadeaway" data-align="right"></div><div id="recordMovePopup" class="new-collection-popup-overlay overlay overlay_fixed state-hidden" data-action="closeRecordMovePopup"><div class="record-move-popup listbox listbox_fixed" data-action="preventCloseRecordMovePopup"><div class="collection-popup-header">Переместить в подборку</div><span class="button header-button button_icon button_icon_clear2" data-action="closeRecordMovePopup"></span><ul id="recordMovePopupList" class="collections-popup-list"></ul></div></div><div id="recordCopyPopup" class="new-collection-popup-overlay overlay overlay_fixed state-hidden" data-action="closeRecordMovePopup"><div class="record-move-popup listbox listbox_fixed" data-action="preventCloseRecordMovePopup"><div class="collection-popup-header">Скопировать в подборку</div><span class="button header-button button_icon button_icon_clear2" data-action="closeRecordMovePopup"></span><ul id="recordCopyPopupList" class="collections-popup-list"></ul></div></div><div id="shareCollection" class="overlay overlay_fixed overlay_share state-hidden state-fadeaway" data-action="closeCollectionPopup"><div role="listbox" class="collection-share-popup listbox listbox_share listbox_fixed state-unselectable" data-action="preventCloseCollectionPopup" data-align="center"><div class="collection-popup-header">Поделиться подборкой</div><span class="button header-button button_icon button_icon_clear2" data-action="closeCollectionPopup"></span><div class="tumbler-wrapper">
+                    Публичная подборка
+                    <div id="shareCollectionTumbler" data-confirm="Скрыв подборку, вы потеряете её подписчиков. Даже если вы переоткроете подборку, другим пользователям придётся подписываться заново. Продолжить?" class="tumbler"></div></div><div class="collection-share-text collection-share-text_login">
+                    Войдите, чтобы поделиться подборкой
+                </div><div class="collection-share-links"><div class="listbox-option listbox-option_fakeinput"><div id="shareCollectionInput" class="listbox-option_fakeinput-content state-selectable"></div><div id="shareCollectionCopy" class="button button_gray button_icon button_icon_copy" aria-label="Выделить ссылку" data-tooltip="Выделить ссылку" data-tooltip-position="top"></div></div><div class="listbox-column"><div id="shareCollectionContent"></div><div class="listbox-option" data-action="collectionMail" unselectable="on"></div></div></div></div></div><div id="subscribeTooltip" class="tooltip subscribe-tooltip state-unselectable state-hidden" data-position="bottom" data-align="center" data-text-limit="У вас максимальное количество подборок"></div><div id="errorToast" class="error-toast state-hidden"><span class="button_icon_close"></span><div id="errorToastContent"></div></div><div id="srcLangListbox" role="listbox" class="listbox listbox_fixed listbox_language listbox_language_source state-hidden state-fadeaway state-unselectable"><div class="listbox-column listbox-column_extra"><div class="listbox-option listbox-option_checkbox" data-action="toggleAuto">Автоопределение</div><div id="srcLangHistory" class="listbox-history state-empty"><div class="listbox-option listbox-option_label">Недавние</div><div id="srcLangHistoryContent"></div></div></div><div id="srcLangListboxContent" class="listbox-column listbox-column_main"></div></div><div id="dstLangListbox" role="listbox" class="listbox listbox_fixed listbox_language listbox_language_target state-hidden state-fadeaway state-unselectable"><div id="dstLangHistory" class="listbox-column listbox-column_extra listbox-history state-empty"><div class="listbox-option listbox-option_label">Недавние</div><div id="dstLangHistoryContent"></div></div><div id="dstLangListboxContent" class="listbox-column listbox-column_main"></div></div><div class="overlay overlay_fixed expired state-fadeaway state-unselectable"><div class="overlay-content"><div class="expired-header">Закончилось время сессии</div><div class="expired-text">Обновите, пожалуйста, страницу. Набранный текст и перевод не потеряются.</div><div class="button" data-action="expiredRefresh">Обновить страницу</div></div></div><div class="overlay overlay_fixed overlay_db_inactive state-fadeaway state-unselectable"><div class="overlay-content"><div class="expired-header">Не удалось открыть подборки</div><div class="expired-text">Переводчик не смог соединиться с базой данных браузера. Если ошибка повторяется из раза в раз, пожалуйста, <a href="https://yandex.ru/support/translate/troubleshooting.html" target="_blank">напишите в поддержку</a>. Обратите внимание, что подборки могут не работать в режиме инкогнито.</div><div class="expired-text expired-text_blocked">Чтобы подборки заработали, перезапустите браузер</div><div class="button" data-action="closeDbOverlay">Закрыть</div></div></div><div id="distContainer"><div id="d0" data-tracking-data='{"id": "dist_banner"}'></div></div>
+
+        <!-- Yandex.Metrika counter -->
+        
+            
+<script nonce="FNYlRl9agT">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function () {
+            var deviceType = 'desktop',
+                localStorageAvailable = true;
+            if (deviceType === 'mobile') {
+                deviceType = 'mobile_old';
+            } else if (!deviceType) {
+                deviceType = 'none';
+            }
+
+            try {
+                w.localStorage.setItem('localStorage', 1);
+                w.localStorage.removeItem('localStorage');
+            } catch (error) {
+                localStorageAvailable = false;
+            }
+
+            var mParams = {
+                id: 28584306,
+                webvisor: true,
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                trackHash: true,
+                params: {
+                    ui: 'ru',
+                    domain: 'ru',
+                    loggedIn: !!'',
+                    view: 'desktop_new' || 'none',
+                    isFirstVisit: true,
+                    firstVisitSrc: 'organic' || 'none',
+                    deviceType: deviceType,
+                    localStorageAvailable: localStorageAvailable,
+                    expId: ['263031'],
+                    isTurboapp: false,
+                }
+            };
+
+            try {
+                w['yaCounter' + mParams.id] = new Ya.Metrika(mParams);
+            } catch (e) {}
+        });
+
+        var n = d.getElementsByTagName('script')[0],
+            s = d.createElement('script'),
+            f = function () {
+                n.parentNode.insertBefore(s, n);
+            };
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'https://mc.yandex.ru/metrika/watch.js';
+
+        if (w.opera == '[object Opera]') {
+            d.addEventListener('DOMContentLoaded', f, false);
+        } else { f(); }
+    })(document, window, 'yandex_metrika_callbacks');
+
+    window.sendMetrikaGoal = function (goal) {
+        try {
+            window['yaCounter28584306'].reachGoal(goal);
+        } catch (error) {}
+    };
+</script>
+<noscript><img src="//mc.yandex.ru/watch/28584306"></noscript>
+
+
+        
+        <!-- /Yandex.Metrika counter -->
+
+        <script nonce="FNYlRl9agT">
+            (function () {
+                var LANDING_TYPES = {
+                    dict: 'dict',
+                    text: 'text'
+                };
+
+                var EXAMPLE_LANGS = (function (directions, disabledDirections) {
+                    var result = {};
+
+                    directions.forEach(function (direction) {
+                        result[direction] = true;
+                    });
+
+                    disabledDirections.forEach(function (direction) {
+                        if (direction in result) {
+                            delete result[direction];
+                        }
+                    });
+
+                    return result;
+                })(['de-en', 'de-ru', 'en-de', 'en-fr', 'en-ru', 'fr-en', 'fr-ru', 'ru-de', 'ru-en', 'ru-fr'], "" || []);
+
+                window.config = {
+                    SRV: 'tr-text',
+                    SID: '4af1522c.76d0a4f5.8df70d2a.47875647d22747',
+                    VER: 'v20.8.4',
+                    UID: null,
+                    LOAD_TS: '1598688615',
+                    FAMILY: 1,
+                    CSRF_TOKEN: '64f82ae631321b2393e4befb19ea0cf0f89e8255:5f4a0d67',
+                    IS_FIRST_VISIT: true,
+                    CLCK_URL: 'https://yandex.ru/clck/click/',
+                    CLCK_PATH: 'web_desktop.morda',
+                    DOMAIN: 'ru',
+                    UI_LANG: 'ru',
+                    PASSPORT: 'ru',
+                    RETPATH: 'https%3A%2F%2Ftranslate.yandex.ru%2F',
+                    FAV_URL: '/user/tr',
+                    FAV_URL2: '/props/api/users/None/favorites',
+                    TTS_URL: 'https://tts.voicetech.yandex.net/tts',
+                    UNIPROXY_URL: 'wss://uniproxy.alice.yandex.net/uni.ws',
+                    OPTIONS: {
+                        shift: 'Перенос строки только по Shift+Enter',
+                        speller: 'Проверять правописание',
+                        suggest: 'Показывать подсказку',
+                        autoheight: 'Адаптивная высота полей',
+                        dictionary: 'Показывать словарь'
+                    },
+                    TTS_RATE: 1,
+                    TTS_LANGS: {
+                        en: 'en_GB',
+                        ru: 'ru_RU',
+                        tr: 'tr_TR',
+                        uk: 'uk_UA'
+                    },
+                    SYN_TITLES: {
+                        syn: 'Синонимы',
+                        ant: 'Антонимы',
+                        deriv: 'Родственные слова'
+                    },
+                    SYN_TITLES2: {
+                        syn: {
+                            title: 'син.',
+                            tooltip: 'Синонимы'
+                        },
+                        ant: {
+                            title: 'ант.',
+                            tooltip: 'Антонимы'
+                        },
+                        deriv: {
+                            title:'род.',
+                            tooltip: 'Родственные слова'
+                        }
+                    },
+                    DICT_TITLES: {
+                        regular: 'Словарь',
+                        similar: 'Связанные слова'
+                    },
+                    MORE_MESSAGE: 'ещё {0}',
+                    REFERENCE_TOOLTIP_MESSAGES: {
+                        book: '{0}, «{1}». Переводчик — {2}',
+                        series: 'Из сериала «{0}». Режиссёр — {1}',
+                        movie: 'Из фильма «{0}». Режиссёр — {1}'
+                    },
+                    TABS: {
+                        other: 'прочие переводы',
+                        all: 'все'
+                    },
+                    COLLECTION_TITLES: {
+                        collection: 'Мои подборки',
+                        subscription: 'Мои подписки',
+                        top: 'Популярные подборки'
+                    },
+                    PAGEVIEW: 'desktop_new',
+                    SHARE_URL: 'https://share.yandex.ru/go.xml',
+                    VOTES_URL: '/props/api/votes/trnsl',
+                    SEARCH_URL: 'https://yandex.ru/search/',
+                    TABLEAU_URL: 'https://yastatic.net/tableau/tableau.html',
+                    TABLEAU_PRESET: 'ru',
+                    SPELLER_URL: 'https://speller.yandex.net/services/spellservice.json/checkText',
+                    TOOLTIPS: {
+                        copy: 'Копировать',
+                        copy2: 'Перевод скопирован',
+                        sync: 'Запись ещё не синхронизирована',
+                        sync2: 'Превышен лимит избранного',
+                        copyLink: 'Копировать ссылку',
+                        copyLink2: 'Ссылка скопирована',
+                        download: 'Скачать картинку с текстом',
+                        favourite: 'Добавить в избранное',
+                        collections: 'Добавить в подборку',
+                        collections2: 'Удалить из подборки',
+                        sttErrorOldBrowser: 'Пока не работает на этом языке'
+                    },
+                    TOAST_MESSAGES: {
+                        unsupportedFormat: 'Формат файла не поддерживается. Выберите документ с расширением {0} или картинку',
+                        maxSize: 'Размер файла превышает {0} МБ',
+                        quotaExceeded: 'Не удалось получить перевод. Проверьте, что режим Инкогнито выключен, а на диске есть свободное место'
+                    },
+                    ALLOWED_FORMATS: '.doc, .docx, .pdf, .xls, .xlsx, .ppt, .pptx',
+                    DETECTOR_URL: 'https://translate.yandex.net/api/v1/tr.json/detect',
+                    TRANSLIT_URL: 'https://translate.yandex.net/translit/translit',
+                    COMPLAINT_URL: '/community/api/projects/574d59cb253352f1c33c704e/contribs',
+                    COLLECTIONS_URL: '/props/api/',
+                    SPELLER_LANGS: (function (langList) {
+                        var langHash = {};
+
+                        langList.forEach(function (lang) {
+                            langHash[lang] = true;
+                        });
+
+                        return langHash;
+                    })(["en","ru","uk"]),
+                    AUTO_SPELLER_LANGS: {
+                        en: true,
+                        ru: true
+                    },
+                    TABLEAU_DELAY: 300,
+                    POPUP_DELAY: 3000,
+                    SPEECHKIT_KEY: 'bf4277fc-06c0-405a-b278-b796bbbd3f27',
+                    SUGGESTIONS_URL: 'https://predictor.yandex.net/predict.json/translatePredict',
+                    PREDICTOR_URL: 'https://predictor.yandex.net/suggest.json/complete',
+                    TRANSLATE_PREDICTOR_URL: 'https://translate.yandex.net/api/v1/tr.json/translateSentence',
+                    DICTIONARY_URL: 'https://dictionary.yandex.net/dicservice.json/lookupMultiple',
+                    EXAMPLES_URL: 'https://dictionary.yandex.net/dicservice.json/queryCorpus',
+                    TRANSLATOR_URL: 'https://translate.yandex.net/api/v1/tr.json/translate',
+                    ALTERNATIVES_URL:'https://translate.yandex.net/api/v1/tr.json/suggestAlternatives',
+                    TRANSLATOR_EXTRA_OPTIONS: 0,
+                    SOCIAL_SERVICES: {
+                        vkontakte: 'ВКонтакте',
+                        facebook: 'Facebook',
+                        odnoklassniki: 'Одноклассники'
+                    },
+                    TRANSLIT_LANGS: {
+                        am: true,
+                        bn: true,
+                        el: true,
+                        gu: true,
+                        he: true,
+                        hi: true,
+                        hy: true,
+                        ja: true,
+                        ka: true,
+                        kn: true,
+                        ko: true,
+                        ml: true,
+                        mr: true,
+                        ne: true,
+                        pa: true,
+                        si: true,
+                        ta: true,
+                        te: true,
+                        th: true,
+                        yi: true,
+                        zh: true
+                    },
+                    PREDICTOR_LANGS: (function (langList) {
+                        var langHash = {};
+
+                        langList.forEach(function (lang) {
+                            langHash[lang] = true;
+                        });
+
+                        return langHash;
+                    })(["af","ar","az","ba","be","bg","bs","ca","cs","cy","da","de","el","en","es","et","eu","fi","fr","ga","gl","he","hr","ht","hu","hy","id","is","it","ka","kk","ky","la","lb","lt","lv","mg","mhr","mk","mn","mrj","ms","mt","nl","no","pl","pt","ro","ru","sk","sl","sq","sr","sv","sw","tg","tl","tr","tt","udm","uk","uz","vi"]),
+                    ALTERNATIVES_LANGS: {
+                        'en-ru': true,
+                        'ru-en': true
+                    },
+                    TRANSLATOR_LANGS: {"az":"Азербайджанский","sq":"Албанский","am":"Амхарский","en":"Английский","ar":"Арабский","hy":"Армянский","af":"Африкаанс","eu":"Баскский","ba":"Башкирский","be":"Белорусский","bn":"Бенгальский","my":"Бирманский","bg":"Болгарский","bs":"Боснийский","cy":"Валлийский","hu":"Венгерский","vi":"Вьетнамский","ht":"Гаитянский","gl":"Галисийский","mrj":"Горномарийский","el":"Греческий","ka":"Грузинский","gu":"Гуджарати","da":"Датский","he":"Иврит","yi":"Идиш","id":"Индонезийский","ga":"Ирландский","is":"Исландский","es":"Испанский","it":"Итальянский","kk":"Казахский","kazlat":"Казахский (латиница)","kn":"Каннада","ca":"Каталанский","ky":"Киргизский","zh":"Китайский","ko":"Корейский","xh":"Коса","km":"Кхмерский","lo":"Лаосский","la":"Латынь","lv":"Латышский","lt":"Литовский","lb":"Люксембургский","mk":"Македонский","mg":"Малагасийский","ms":"Малайский","ml":"Малаялам","mt":"Мальтийский","mi":"Маори","mr":"Маратхи","mhr":"Марийский","mn":"Монгольский","de":"Немецкий","ne":"Непальский","nl":"Нидерландский","no":"Норвежский","pa":"Панджаби","pap":"Папьяменто","fa":"Персидский","pl":"Польский","pt":"Португальский","ro":"Румынский","ru":"Русский","ceb":"Себуанский","sr":"Сербский","si":"Сингальский","sk":"Словацкий","sl":"Словенский","sw":"Суахили","su":"Сунданский","tl":"Тагальский","tg":"Таджикский","th":"Тайский","ta":"Тамильский","tt":"Татарский","te":"Телугу","tr":"Турецкий","udm":"Удмуртский","uz":"Узбекский","uzbcyr":"Узбекский (кириллица)","uk":"Украинский","ur":"Урду","fi":"Финский","fr":"Французский","hi":"Хинди","hr":"Хорватский","cs":"Чешский","cv":"Чувашский","sv":"Шведский","gd":"Шотландский (гэльский)","sjn":"Эльфийский (синдарин)","emj":"Эмодзи","eo":"Эсперанто","et":"Эстонский","jv":"Яванский","sah":"Якутский","ja":"Японский"},
+                    DICTIONARY_LANGS: (function (langList) {
+                        var langHash = {};
+
+                        langList.forEach(function (lang) {
+                            langHash[lang] = true;
+                        });
+
+                        return langHash;
+                    })(["be-be","be-ru","bg-ru","cs-cs","cs-en","cs-ru","da-en","da-ru","de-de","de-en","de-ru","de-tr","el-en","el-ru","en-cs","en-da","en-de","en-el","en-en","en-es","en-et","en-fi","en-fr","en-it","en-lt","en-lv","en-nl","en-no","en-pt","en-ru","en-sk","en-sv","en-tr","en-uk","es-en","es-es","es-ru","et-en","et-ru","fi-en","fi-fi","fi-ru","fr-en","fr-fr","fr-ru","hu-hu","hu-ru","it-en","it-it","it-ru","lt-en","lt-lt","lt-ru","lv-en","lv-ru","mhr-ru","mrj-ru","nl-en","nl-ru","no-en","no-ru","pl-ru","pt-en","pt-ru","ru-be","ru-bg","ru-cs","ru-da","ru-de","ru-el","ru-en","ru-es","ru-et","ru-fi","ru-fr","ru-hu","ru-it","ru-lt","ru-lv","ru-mhr","ru-mrj","ru-nl","ru-no","ru-pl","ru-pt","ru-ru","ru-sk","ru-sv","ru-tr","ru-tt","ru-uk","ru-zh","sk-en","sk-ru","sv-en","sv-ru","tr-de","tr-en","tr-ru","tt-ru","uk-en","uk-ru","uk-uk","zh-ru"]),
+                    EXAMPLE_LANGS: EXAMPLE_LANGS,
+                    DERIV_LANGS: {
+                        cs: true,
+                        en: true,
+                        ru: true
+                    },
+                    ANT_LANGS: {
+                        cs: true,
+                        en: true,
+                        ru: true
+                    },
+                    TRANSLATOR_LANGS_TAGS: {"am":["beta"],"kazlat":["beta"],"ky":["beta"],"lo":["beta"],"mhr":["beta"],"ml":["beta"],"mn":["beta"],"mrj":["beta"],"my":["beta"],"pap":["beta"],"sah":["beta"],"sjn":["alpha"],"ta":["beta"],"te":["beta"],"tg":["beta"],"udm":["beta"],"xh":["beta"]},
+                    EXTERNAL_SERVICES: {
+                        Google: {
+                            href: 'https://translate.google.com/',
+                            textParam: 'q',
+                            srcLangParam: 'sl',
+                            dstLangParam: 'tl'
+                        },
+                        Bing: {
+                            href: 'https://www.bing.com/translator/',
+                            textParam: 'text',
+                            srcLangParam: 'from',
+                            dstLangParam: 'to'
+                        }
+                    },
+                    FAV_SORT_ITEMS: {
+                        date: 'По дате добавления',
+                        name: 'По алфавиту',
+                        length: 'По длине текста'
+                    },
+                    COLLECTION_UTM_SOURCE: 'collection_share_desktop',
+                    COLLECTION_TOAST_MESSAGES: {
+                        added: 'Перевод добавлен в подборку «{0}»',
+                        limit: 'Подборка «{0}» заполнена',
+                        deleted: 'Удалено из «{0}»'
+                    },
+                    COLLECTION_MENU_ITEMS: {
+                        select: {
+                            icon: 'lines',
+                            title: 'Выбрать записи',
+                            action: 'editRecords'
+                        },
+                        edit: {
+                            icon: 'pencil',
+                            title: 'Переименовать',
+                            action: 'editCollection'
+                        },
+                        'delete': {
+                            icon: 'trash',
+                            title: 'Удалить подборку',
+                            action: 'deleteCollection',
+                            confirm: 'Вы уверены, что хотите удалить подборку?'
+                        }
+                    },
+                    HISTORY_MENU_ITEMS: {
+                        select: {
+                            icon: 'lines',
+                            title: 'Выбрать записи',
+                            action: 'editRecords'
+                        },
+                        'delete': {
+                            icon: 'trash',
+                            title: 'Очистить',
+                            action: 'clearCollection',
+                            confirm: 'Вы уверены, что хотите удалить записи?'
+                        }
+                    },
+                    SUBSCRIPTION_MENU_ITEMS: {
+                        copy: {
+                            icon: 'lines',
+                            title: 'Скопировать записи',
+                            action: 'editSubscriptionRecords'
+                        },
+                        unsubscribe: {
+                            icon: 'trash',
+                            title: 'Отписаться',
+                            action: 'unsubscribeFromCollection',
+                            confirm: 'Вы уверены, что хотите отписаться от подборки?',
+                        },
+                    },
+                    USE_FAKEAREA: true,
+                    DEFAULT_FAV_SORT: 'date',
+                    TR_FILENAME: 'elvish.png',
+                    DEFAULT_FAV_NAME: 'Избранное',
+                    DEFAULT_COLLECTION_NAME: 'Новая подборка',
+                    DEFAULT_HISTORY_NAME: 'История',
+                    COLLECTIONS_PATHNAME: '/collections',
+                    MAX_FAV_ITEMS2: 2500,
+                    MAX_COLLECTIONS: 20,
+                    MAX_COL_LENGTH: 15,
+                    MAX_UNIPROXY_TTS_LENGTH: 300,
+                    MAX_TTS_LENGTH: 100,
+                    MAX_DICT_QUERY: 100,
+                    MAX_EXMP_QUERY: 600,
+                    MAX_EXAMPLE_POPUP_LENGTH: 80,
+                    MAX_EXAMPLE_LENGTH: 200,
+                    MAX_EXMP_DST_QUERY: 100,
+                    LONGTEXT_LENGTH: 150,
+                    MAX_SYNC_LENGTH: 1000,
+                    INVALID_URL_LANGS: {
+                        sjn: true
+                    },
+                    PRESYNC_TIMEOUT: 15000,
+                    SPEECHKIT_TIMEOUT: 5000,
+                    TOAST_DELAY: 4000,
+                    MAX_SPELLER_LENGTH: 1000,
+                    MAX_SYNONYMS_ITEMS: 8,
+                    MAX_SYNONYMS_ITEMS2: 64,
+                    MAX_FAV_TEXT_LENGTH: 300,
+                    SESSION_RESUME_TIME: 1000 * 60 * 30,
+                    POPUP_INDENT: 50,
+                    COLLAPSE_THRESHOLD: 8,
+                    MAX_DICT_WORD_COUNT: 3,
+                    MAX_EXMP_WORD_COUNT: 7,
+                    MIN_EXAMPLE_COUNT: 2,
+                    MAX_EXAMPLE_COUNT: 3,
+                    DICTIONARY_COUNT: 3,
+                    MAX_WARNING_SHOW: 3,
+                    MAX_FILE_SIZE_MB: 5,
+                    MAX_PREDICTOR_ITEMS: 1,
+                    MIN_PREDICTOR_WORDS: 5,
+                    MAX_PREDICTOR_WORDS: 20,
+                    MAX_PREDICTOR_QUERY: 1000,
+                    MAX_SHARE_TEXT_LENGTH: 500,
+                    MAX_TRANSLATOR_QUERY: 10000,
+                    MAX_RECENT_LANGUAGES: 7,
+                    MIN_TEXTBOX_HEIGHT: 114,
+                    MIN_MAIN_CONTAINER_HEIGHT: 160,
+                    COLLAPSED_HEIGHT: 270,
+                    COLLECTION_BANNER_DELAY: 86400 * 1000, // 1 day
+                    COLLECTION_PROMO_MIN_SCREEN_HEIGHT: 620,
+                    MAX_NATIVE_TTS_LENGTH: 300,
+                    MAX_EDITOR_TEXTLENGTH: 2000,
+                    MAX_TRANSLIT_TEXTLENGTH: 100,
+                    MAX_HISTORY_RECORDS: 1000,
+                    MAX_HISTORY_SHOW: 10,
+                    ENABLE_DOM_TRACKING: true,
+                    ENABLE_UNIPROXY_TTS_PRIORITY: false,
+                    ENABLE_UNIPROXY_ASR_PRIORITY: false,
+                    ENABLE_SPEECHKIT_PRIORITY: false,
+                    ENABLE_UNIPROXY: 0,
+                    FORCE_UNIPROXY: false,
+                    REPLACE_SPEECHKIT: false,
+                    ENABLE_TTS_SLOWING: false,
+                    ENABLE_NATIVE_ASR: false,
+                    ENABLE_DIST_BANNER: false,
+
+                    ENABLE_COLLECTION: false,
+                    ENABLE_LANG_SWITCHERS: false,
+
+                    LANDING_TYPE: null,
+                    LANDING_TYPES: LANDING_TYPES,
+
+                    ENABLE_SUGGESTIONS: true,
+                    SUGGESTIONS_CONF: {"fallbackPredicts":3,"predicts":1,"suggests":3},
+
+                    LOCALIZATIONS: {
+                        collectionSubscribe: 'Подписаться',
+                        selectUnpinTooltip: 'Открепить',
+                        selectPinTooltip: 'Закрепить',
+                        dictionaryExamplesShow: 'Показать примеры',
+                        dictionaryExamplesHide: 'Скрыть примеры',
+                        dictionaryLabelModern: 'Современная лексика',
+                        dictHide: 'свернуть',
+                        exampleValuedGoodTooltip: 'Хороший пример',
+                        exampleValuedBadTooltip: 'Плохой пример',
+                        examplesHide: 'cкрыть',
+                        collectionsBrokenSubscription: 'Подборка не обновляется',
+                        collectionsPrivateTooltip: 'Не публичная подборка',
+                        collectionsSubscribed: 'Вы подписаны',
+                        collectionsButtonSubscribe: 'Подписаться',
+                        collectionsRecordsEmpty: 'В этой подборке ещё нет переводов',
+                        favouritesFilterEmpty: 'Ничего не найдено',
+                        collectionsFavButtonDeleteTooltip: 'Удалить из подборки',
+                        collectionsHeaderRecords: 'Переводы',
+                        collectionsHeaderSubscribers: 'Подписчики',
+                        collectionsListItemCreate: 'Создать новую',
+                        collectionsChange: 'Изменить подборку',
+                        popupEmpty: 'Нет примеров использования. Напишите иначе или сократите',
+                        popupMoreExamples: 'Посмотреть другие значения',
+                        reportError: 'Сообщить об ошибке',
+                        historyTitle: 'Недавние переводы',
+                        historyButton: 'История',
+                    }
+                }
+            }());
+        </script>
+        <script src="https://yastatic.net/s3/translate/v20.8.4/js/bundles/text.js" type="text/javascript" charset="UTF-8" crossorigin="anonymous"></script>
+        <script src="https://yastatic.net/s3/translate/v20.8.4/js/webspeechkit-settings.js" crossorigin="anonymous"></script>
+        <script src="https://yastatic.net/s3/translate/v20.8.4/js/webspeechkit.js" crossorigin="anonymous"></script>
+        <script src="https://yastatic.net/s3/translate/v20.8.4/js/keyboard.js" crossorigin="anonymous"></script>
+        <script nonce="FNYlRl9agT">
+            initTextApp(window.config);
+        </script>
+
+        
+
+        
+
+        
+    </body>
+</html>

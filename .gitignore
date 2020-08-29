@@ -1,4 +1,3 @@
-tests/*.html
 __pycache__
 yandexfreetranslate/__pycache__
 dist
