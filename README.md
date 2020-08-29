@@ -1,6 +1,6 @@
 Yandex Free Translate! More than six million requests! No limits or restrictions! Tested within a year!
 
-(Более шести миллионов запросов! Никаких ограничений и лимитов! Проверено в течение года!)
+Яндекс Переводчик бесплатно (Более шести миллионов запросов! Никаких ограничений и лимитов! Проверено в течение года!)
 ## Installing (Установка)
 `python3 -m pip install git+https://github.com/alekssamos/yandexfreetranslate.git`
 
@@ -25,7 +25,7 @@ python3 yandexfreetranslate/__init__.py en ru in.txt out.txt
 ## Runing tests (Запуск тестов)
 ```bash
 git clone https://github.com/alekssamos/yandexfreetranslate.git
-cd yandexfreetranslate
+cd yandexfreetranslate/tests
 python3 -m unittest
 # or (или)
 python3 -m pip install tox
