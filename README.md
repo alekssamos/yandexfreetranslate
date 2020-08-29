@@ -27,7 +27,4 @@ python3 yandexfreetranslate/__init__.py en ru in.txt out.txt
 git clone https://github.com/alekssamos/yandexfreetranslate.git
 cd yandexfreetranslate/tests
 python3 -m unittest
-# or (или)
-python3 -m pip install tox
-python3 -m tox
 ```
