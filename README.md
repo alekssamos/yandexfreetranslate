@@ -12,7 +12,8 @@ or (или)
 from yandexfreetranslate import YandexFreeTranslate
 yt = YandexFreeTranslate()
 
-print(yt.translate("en", "ru", "Hello, world!"))```
+print(yt.translate("en", "ru", "Hello, world!"))
+```
 Or from command line (Или из командной строки):
 ```bash
 python3 yandexfreetranslate/__init__.py en ru "Hello, world!"
