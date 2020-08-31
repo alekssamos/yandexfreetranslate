@@ -126,7 +126,7 @@ class YandexFreeTranslate():
 			req.add_header("DNT", "1")
 			req.add_header("Accept-Encoding", "gzip, deflate, br")
 			try:
-				content = urllibrequest.urlopen(req, data = urllibparse.urlencode({
+				content = self._create_opener().open(req, data = urllibparse.urlencode({
 					"options": 4, "text":part
 				}).encode("UTF8")).read().decode("UTF8")
 				resp = json.loads(content)
