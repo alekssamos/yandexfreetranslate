@@ -2,6 +2,8 @@ import sys
 import os
 import os.path
 import re
+import socks
+from sockshandler import SocksiPyHandler
 import unittest
 try:
 	import yandexfreetranslate
@@ -9,6 +11,11 @@ except ImportError:
 	sys.path.insert(0, "..")
 	import yandexfreetranslate
 	del sys.path[0]
+
+class dummy_build_opener(object):
+	h = None
+	def __init__(self, h=None): self.h = h
+	def open(self, *a, **k): return dummy_urlopen(*a, **k)
 
 class dummy_urlopen(object):
 	def __init__(self, url, *a, **kw):
@@ -26,10 +33,16 @@ class dummy_urlopen(object):
 		raise ValueError("URL!")
 
 yandexfreetranslate.urllibrequest.urlopen = dummy_urlopen
+yandexfreetranslate.urllibrequest.build_opener = dummy_build_opener
 
 class yt_test_translate(unittest.TestCase):
 	def test_translate(self):
 		yt = yandexfreetranslate.YandexFreeTranslate()
+		yt.set_proxy("socks5", "localhost", 9050)
+		self.assertTrue(yt.useProxy, True)
+		yt.useProxy = False
+		yt.set_proxy("https", "localhost", 9050)
+		self.assertTrue(yt.useProxy, True)
 		self.assertTrue(len(yt.translate("en", "ru", "hello")) > 1)
 
 if __name__ == "__main__":
