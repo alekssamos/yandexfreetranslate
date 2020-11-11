@@ -7,7 +7,7 @@ if sys.version_info[0] != 3:
 
 setup(
     name="yandexfreetranslate",
-    version="1.2",
+    version="1.3",
     author="alekssamos",
     author_email="aleks-samos@yandex.ru",
     url="https://github.com/alekssamos/yandexfreetranslate/",
