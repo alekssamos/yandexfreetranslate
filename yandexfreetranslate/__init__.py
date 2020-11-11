@@ -2,6 +2,7 @@
 try: from utils import smartsplit
 except: from .utils import smartsplit
 import ssl
+import gzip
 import json
 import os
 import os.path
@@ -11,9 +12,11 @@ import time
 try:
 	import urllib.parse as urllibparse
 	import urllib.request as urllibrequest
+	import urllib.error as urlliberror
 except ImportError:
 	import urllib as urllibrequest
 	import urllib as urllibparse
+	import urllib as urlliberror
 sys.path.insert(0, os.path.dirname(__file__))
 import socks
 try: from sockshandler import SocksiPyHandler
@@ -23,6 +26,7 @@ del sys.path[0]
 class YandexFreeTranslateError(Exception): pass
 
 class YandexFreeTranslate():
+	error_count = 0
 	siteurl = "https://translate.yandex.ru/"
 	apibaseurl = "https://translate.yandex.net/api/v1/tr.json/"
 	ua = r"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:79.0) Gecko/20100101 Firefox/79.0"
@@ -30,12 +34,20 @@ class YandexFreeTranslate():
 	keysuffix = "-0-0"
 	keyfilename = os.path.join(os.path.expanduser("~"), ".YandexFreeTranslate.key")
 	expiretime = 60*60*24*4
+	backfilename = keyfilename+".back"
 	useProxy = False
 	proxy_protocol = ""
 	proxy_host = ""
 	proxy_port = 0
 	proxy_username = ""
 	proxy_password = ""
+	def decode_response(self, response):
+		try:
+			res = response.decode("UTF8")
+		except UnicodeDecodeError:
+			res = gzip.decompress(response).decode("UTF8")
+		return res
+
 	def set_proxy(self, protocol, host, port, username="", password=""):
 		self.useProxy = True
 		self.proxy_protocol = protocol
@@ -83,8 +95,9 @@ class YandexFreeTranslate():
 			req.add_header("Accept", r"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8 ")
 			req.add_header("Accept-Language", r"ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3")
 			req.add_header("DNT", "1")
-			req.add_header("Accept-Encoding", "gzip, deflate, br")
-			page = self._create_opener().open(req).read().decode("UTF8")
+			req.add_header("Accept-Encoding", "gzip")
+			response = self._create_opener().open(req).read()
+			page = self.decode_response(response)
 			#open("page.html", "w", encoding="utf8").write(page)
 			try:
 				return re.search(r'''SID[\s]?[:][\s]?['"]([^'"]+)['"]''', page).group(1)
@@ -111,12 +124,17 @@ class YandexFreeTranslate():
 			return key
 	def get_key(self): return self._get_key()
 	def regenerate_key(self):
-		if os.path.isfile(self.keyfilename): os.rename(self.keyfilename, self.keyfilename+".back")
-		return self._get_key()
+		if os.path.isfile(self.backfilename): os.remove(self.backfilename)
+		if os.path.isfile(self.keyfilename):
+			os.rename(self.keyfilename, self.backfilename)
+		self.key = self._get_key()
+		return self.key
 	def __init__(self):
-		if not os.path.isfile(self.keyfilename) and os.path.isfile(self.keyfilename+".back"):
-			os.rename(self.keyfilename+".back", self.keyfilename)
+		if not os.path.isfile(self.keyfilename) and os.path.isfile(self.backfilename):
+			os.rename(self.backfilename, self.keyfilename)
 	def translate(self, source = "auto", target="", text=""):
+		resp = {}
+		content = None
 		try:
 			if self.useProxy:
 				old_context = ssl._create_default_https_context
@@ -140,12 +158,22 @@ class YandexFreeTranslate():
 				req.add_header("DNT", "1")
 				req.add_header("Accept-Encoding", "gzip, deflate, br")
 				try:
-					content = self._create_opener().open(req, data = urllibparse.urlencode({
+					response = self._create_opener().open(req, data = urllibparse.urlencode({
 						"options": 4, "text":part
-					}).encode("UTF8")).read().decode("UTF8")
+					}).encode("UTF8")).read()
+					content = self.decode_response(response)
 					resp = json.loads(content)
-				except json.JSONDecodeError:
-					raise YandexFreeTranslateError(content)
+				except (urlliberror.HTTPError, json.JSONDecodeError):
+					if self.error_count >= 2:
+						self.error_count = 0
+						if sys.exc_info()[0] == json.JSONDecodeError:
+							raise YandexFreeTranslateError(content)
+						else:
+							raise
+					else:
+						self.error_count = self.error_count + 1
+						self.regenerate_key()
+						return self.translate(source, target, text)
 				if "text" not in resp:
 					raise YandexFreeTranslateError(content)
 				p.append(resp["text"][0])

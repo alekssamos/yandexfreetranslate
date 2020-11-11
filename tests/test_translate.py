@@ -12,6 +12,15 @@ except ImportError:
 	import yandexfreetranslate
 	del sys.path[0]
 
+pagefiles = ("page.html", "page.gz")
+pagecount = 0
+def getpagefilename():
+	global pagecount, pagefiles
+	if pagecount > 1: pagecount = 0
+	res = pagefiles[pagecount]
+	pagecount = pagecount + 1
+	return res
+
 class dummy_build_opener(object):
 	h = None
 	def __init__(self, h=None): self.h = h
@@ -24,7 +33,7 @@ class dummy_urlopen(object):
 		self.url = url
 	def read(self):
 		if "https://translate.yandex.ru/" in self.url:
-			with open(os.path.join(os.path.dirname(__file__), "page.html"), "rb") as f:
+			with open(os.path.join(os.path.dirname(__file__), getpagefilename()), "rb") as f:
 				body = f.read()
 				return body
 		if "https://translate.yandex.net/api/v1/tr.json/translate?" in self.url+"?":
@@ -43,7 +52,8 @@ class yt_test_translate(unittest.TestCase):
 		yt.useProxy = False
 		yt.set_proxy("https", "localhost", 9050)
 		self.assertTrue(yt.useProxy, True)
-		self.assertTrue(len(yt.translate("en", "ru", "hello")) > 1)
+		for i in range(1):
+			self.assertTrue(len(yt.translate("en", "ru", "hello")) > 1)
 
 if __name__ == "__main__":
 	unittest.main()
