@@ -47,6 +47,7 @@ yandexfreetranslate.urllibrequest.build_opener = dummy_build_opener
 class yt_test_translate(unittest.TestCase):
 	def test_translate(self):
 		yt = yandexfreetranslate.YandexFreeTranslate()
+		self.assertTrue(yt.api, "web")
 		yt.set_proxy("socks5", "localhost", 9050)
 		self.assertTrue(yt.useProxy, True)
 		yt.useProxy = False
@@ -54,6 +55,11 @@ class yt_test_translate(unittest.TestCase):
 		self.assertTrue(yt.useProxy, True)
 		for i in range(1):
 			self.assertTrue(len(yt.translate("en", "ru", "hello")) > 1)
+		yt = yandexfreetranslate.YandexFreeTranslate(api="ios")
+		self.assertTrue(yt.api, "ios")
+		self.assertTrue(len(yt.translate("en", "ru", "hello")) > 1)
+		self.assertTrue(len(yt.key) > 1)
+
 
 if __name__ == "__main__":
 	unittest.main()

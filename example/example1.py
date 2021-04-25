@@ -1,5 +1,5 @@
 from yandexfreetranslate import YandexFreeTranslate
-yt = YandexFreeTranslate()
+yt = YandexFreeTranslate("ios")
 print(yt.translate("auto", "ru", "Hello, my friend!"))
 
 yt.set_proxy("socks5", "socks.zaborona.help", 1488)

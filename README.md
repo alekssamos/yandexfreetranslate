@@ -8,9 +8,14 @@ or (или)
 
 `python3 -m pip install yandexfreetranslate`
 ### Using (Использование)
+> Если не работает, то при создании класса поменяйте API на "ios", по умолчанию используется "web".
+> If it doesn't work, then when creating the class, change the API to "ios", use "web" by default.
 ```python3
 from yandexfreetranslate import YandexFreeTranslate
 yt = YandexFreeTranslate()
+# yt = YandexFreeTranslate(api = "web")
+# yt = YandexFreeTranslate(api = "ios")
+
 # yt.set_proxy("socks5", "localhost", 9050, "username", "password")
 
 print(yt.translate("en", "ru", "Hello, world!"))

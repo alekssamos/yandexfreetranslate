@@ -29,6 +29,7 @@ class YandexFreeTranslate():
 	error_count = 0
 	siteurl = "https://translate.yandex.ru/"
 	apibaseurl = "https://translate.yandex.net/api/v1/tr.json/"
+	api=""
 	ua = r"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:79.0) Gecko/20100101 Firefox/79.0"
 	key = ""
 	keysuffix = "-0-0"
@@ -41,6 +42,17 @@ class YandexFreeTranslate():
 	proxy_port = 0
 	proxy_username = ""
 	proxy_password = ""
+	def _getparams(self, **p):
+		params = {}
+		params["ios"] = {
+			"srv":"ios", "ucid":"9676696D-0B56-4F13-B4D5-4A3DA2A3344D",
+			"sid":"1A5A10A952AB4A3B82533F44B87EE696", "id":"1A5A10A952AB4A3B82533F44B87EE696-0-0"
+		}
+		params["web"] = {
+			"id":self.key, "srv":"tr-text", "reason":"paste", "options": 4
+		}
+		params[self.api].update(p)
+		return params[self.api]
 	def decode_response(self, response):
 		try:
 			res = response.decode("UTF8")
@@ -86,6 +98,7 @@ class YandexFreeTranslate():
 		for item in sid.split(splitter): l.append(item[::-1])
 		return splitter.join(l)+self.keysuffix
 	def _parse_sid(self):
+		if self.api != "web": ValueError("available only for web API. Now using "+self.api)
 		try:
 			if self.useProxy:
 				old_context = ssl._create_default_https_context
@@ -129,7 +142,9 @@ class YandexFreeTranslate():
 			os.rename(self.keyfilename, self.backfilename)
 		self.key = self._get_key()
 		return self.key
-	def __init__(self):
+	def __init__(self, api="web"):
+		api = api.lower()
+		self.api = api
 		if not os.path.isfile(self.keyfilename) and os.path.isfile(self.backfilename):
 			os.rename(self.backfilename, self.keyfilename)
 	def translate(self, source = "auto", target="", text=""):
@@ -149,9 +164,7 @@ class YandexFreeTranslate():
 			else: lang = source+"-"+target
 			p=[]
 			for part in smartsplit(text, 500, 550):
-				req = self._create_request(self.apibaseurl+"translate?"+urllibparse.urlencode({
-					"id":self.key, "srv":"tr-text", "lang":lang, "reason":"paste"
-				}))
+				req = self._create_request(self.apibaseurl+"translate?"+urllibparse.urlencode(self._getparams(lang=lang)))
 				req.add_header("User-Agent", self.ua)
 				req.add_header("Accept", r"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8 ")
 				req.add_header("Accept-Language", r"ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3")
@@ -159,7 +172,7 @@ class YandexFreeTranslate():
 				req.add_header("Accept-Encoding", "gzip, deflate, br")
 				try:
 					response = self._create_opener().open(req, data = urllibparse.urlencode({
-						"options": 4, "text":part
+						"text":part
 					}).encode("UTF8")).read()
 					content = self.decode_response(response)
 					resp = json.loads(content)
